@@ -1,5 +1,6 @@
 # virtualenv
 django/djangobench/*
+django/djench/djench/settings.py
 *.pyc
 # npm packages
 express/exbench/node_modules/*
