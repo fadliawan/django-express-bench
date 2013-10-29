@@ -20,6 +20,8 @@ mongoose.connect(mongoAddress);
 var db = mongoose.connection;
 db.on('error', function(err) {
   console.log("MongoDB connection error:", err);
+  console.log("Stopping the application...")
+  process.kill();
 });
 db.once('open', function() {
   console.log("Succesfully connected to:", mongoAddress);
