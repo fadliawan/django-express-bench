@@ -6,7 +6,7 @@ from blog.views import json_post
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-	url(r'^api/posts/', json_post)
+    url(r'^api/posts/', json_post)
     # Examples:
     # url(r'^$', 'djench.views.home', name='home'),
     # url(r'^djench/', include('djench.foo.urls')),
