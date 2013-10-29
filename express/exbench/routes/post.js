@@ -3,7 +3,7 @@ var Post = require('../models/models').Post;
 exports.getJSON = function(req, res) {
 	postLimit = req.query.limit || 1000;
 
-	Post.find().limit(postLimit)
+	Post.find().sort('-pub_date').limit(postLimit)
 	.exec(function(err, posts) {
 
 		var postsJSON = posts.map(function(post) {

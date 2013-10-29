@@ -6,7 +6,12 @@ from blog.models import Post
 import json
 
 def json_post(request):
-    post_limit = request.GET.get('limit', 1000)
+    try:
+        post_limit = int(request.GET.get('limit', 1000))
+    except ValueError:
+        post_limit = 1000
+    
+    latest_posts = Post.objects.all().order_by('-pub_date')[:post_limit]
 	
     posts = [{
         'content': p.content,
@@ -15,6 +20,6 @@ def json_post(request):
             'author': c.author,
             'body': c.body
         } for c in p.comment_set.all()],
-    } for p in Post.objects.all()[:post_limit]]
+    } for p in latest_posts]
 
     return HttpResponse(json.dumps(posts), content_type='application/json')
