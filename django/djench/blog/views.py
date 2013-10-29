@@ -7,7 +7,7 @@ import json
 
 def json_post(request):
     try:
-        post_limit = int(request.GET.get('limit', 1000))
+        post_limit = int(request.GET.get('limit', 100))
     except ValueError:
         post_limit = 1000
     
