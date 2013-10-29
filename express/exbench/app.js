@@ -10,7 +10,7 @@ var post = require('./routes/post');
 var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose'),
-	mongoAddress = 'mongodb://localhost/exbench';
+    mongoAddress = 'mongodb://localhost/exbench';
 
 var app = express();
 

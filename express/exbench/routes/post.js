@@ -5,8 +5,8 @@ exports.getJSON = function(req, res) {
 
 	Post.find().limit(postLimit)
 	.exec(function(err, posts) {
-		var postsJSON = posts.map(function(post) {
 
+		var postsJSON = posts.map(function(post) {
 			return {
 				content: post.content,
 				pub_date: post.pub_date.toString(),
@@ -17,9 +17,10 @@ exports.getJSON = function(req, res) {
 					}
 				})
 			};
-
 		});
 
+		// Send the data
 		res.json(postsJSON);
+
 	});
 };
