@@ -5,20 +5,20 @@ exports.getJSON = function(req, res) {
 
 	Post.find().limit(postLimit)
 	.exec(function(err, posts) {
-    var postsJSON = posts.map(function(post) {
+		var postsJSON = posts.map(function(post) {
 
-      return {
-        content: post.content,
-        pub_date: post.pub_date.toString(),
-        comments: post.comments.map(function(comment) {
-          return {
-            author: comment.author,
-            body: comment.body
-          }
-        })
-      };
+			return {
+				content: post.content,
+				pub_date: post.pub_date.toString(),
+				comments: post.comments.map(function(comment) {
+					return {
+						author: comment.author,
+						body: comment.body
+					}
+				})
+			};
 
-    });
+		});
 
 		res.json(postsJSON);
 	});

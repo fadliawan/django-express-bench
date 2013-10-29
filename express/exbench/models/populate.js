@@ -19,7 +19,7 @@ function populatePostAndComment() {
 	var ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut tempor neque. Vivamus venenatis, nisl sed cursus venenatis, velit enim feugiat est, sit amet lacinia lectus nulla at libero.";
 
 	while (i--) {
-		var post = new Post({
+    var post = new Post({
 			content: lorem
 		});
 
