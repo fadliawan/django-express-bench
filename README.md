@@ -23,3 +23,5 @@ each one has 10 comments.
 Benchmarking tool: Apache Bench
 
     ab -n 10 -c 5 http://host:port/api/posts/?limit=10
+
+Test results can be found inside `results/` folder.
