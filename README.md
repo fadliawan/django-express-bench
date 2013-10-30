@@ -40,7 +40,19 @@ Setting up both apps is pretty simple.
 2. Create a `virtualenv` and activate it: `$ source <venv-path>/bin/activate`
 3. Move to Djench root: `$ cd <your-path>/django/djench/`
 4. `$ pip install -r requirements.txt`
-5. Start the Gunicorn: `$ gunicorn -w 4 djench.wsgi:application`
+5. Populate MySQL data*
+6. Start the Gunicorn: `$ gunicorn -w 4 djench.wsgi:application`
+
+##### *Populate MySQL data
+
+1. Run Django shell: `$ python manage.py shell`
+2. Populate the data
+
+```Python
+from blog.populate import *
+populate_post()
+populate_comment()
+```
 
 #### Setting up Exbench
 
@@ -48,4 +60,15 @@ Setting up both apps is pretty simple.
 2. Install [MongoDB](http://mongodb.org) and run `$ mongod`
 3. Move to Exbench root: `$ cd <your-path>/express/exbench/`
 4. Install all packages: `$ npm install`
-5. Start the app: `$ npm start`
+5. Populate MongoDB data*
+6. Start the app: `$ npm start`
+
+##### *Populate MongoDB data
+
+1. Run `$ node` inside Exbench root
+2. Populate the data
+
+```Javascript
+var populateData = require('./models/populate').populatePostAndComment;
+populateData();
+```
