@@ -16,11 +16,15 @@ Express setup:
 
 Both are tested on a mid-2012 1.8 GHz Macbook Air.
 
-Task: Outputting some kBs of JSON data. Latest ten blog posts with their comments,
+### Task:
+
+Outputting some kBs of JSON data. Latest ten blog posts with their comments,
 a simple one-to-many relationship. Database is populated with 1000 dummy posts,
 each one has 10 comments.
 
-Benchmarking tool: Apache Bench
+### Benchmarking tool:
+
+Apache Bench
 
     ab -n 10 -c 5 http://host:port/api/posts/?limit=10
 
