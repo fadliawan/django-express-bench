@@ -1,0 +1,82 @@
+Django
+------
+
+Server Software:        gunicorn/18.0
+Server Hostname:        127.0.0.1
+Server Port:            8000
+
+Document Path:          /api/posts/?limit=10
+Document Length:        54650 bytes
+
+Concurrency Level:      5
+Time taken for tests:   0.582 seconds
+Complete requests:      10
+Failed requests:        0
+Write errors:           0
+Total transferred:      547800 bytes
+HTML transferred:       546500 bytes
+Requests per second:    17.19 [#/sec] (mean)
+Time per request:       290.798 [ms] (mean)
+Time per request:       58.160 [ms] (mean, across all concurrent requests)
+Transfer rate:          919.82 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.3      0       1
+Processing:    25  283 258.2    520     556
+Waiting:       25  282 258.3    520     555
+Total:         25  283 258.1    520     556
+
+Percentage of the requests served within a certain time (ms)
+  50%    520
+  66%    520
+  75%    520
+  80%    521
+  90%    556
+  95%    556
+  98%    556
+  99%    556
+ 100%    556 (longest request)
+
+
+
+
+Express
+-------
+
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            8001
+
+Document Path:          /api/posts/?limit=10
+Document Length:        58042 bytes
+
+Concurrency Level:      5
+Time taken for tests:   0.250 seconds
+Complete requests:      10
+Failed requests:        0
+Write errors:           0
+Total transferred:      583490 bytes
+HTML transferred:       580420 bytes
+Requests per second:    40.04 [#/sec] (mean)
+Time per request:       124.885 [ms] (mean)
+Time per request:       24.977 [ms] (mean, across all concurrent requests)
+Transfer rate:          2281.37 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       0
+Processing:    42  117  63.3    142     198
+Waiting:       42  116  63.2    141     198
+Total:         42  117  63.3    142     198
+
+Percentage of the requests served within a certain time (ms)
+  50%    142
+  66%    163
+  75%    175
+  80%    191
+  90%    198
+  95%    198
+  98%    198
+  99%    198
+ 100%    198 (longest request)
