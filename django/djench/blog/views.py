@@ -9,7 +9,7 @@ def json_post(request):
     try:
         post_limit = int(request.GET.get('limit', 100))
     except ValueError:
-        post_limit = 1000
+        post_limit = 100
     
     latest_posts = Post.objects.all().order_by('-pub_date')[:post_limit]
 	

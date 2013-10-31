@@ -2,6 +2,7 @@ var Post = require('../models/models').Post;
 
 exports.getJSON = function(req, res) {
   postLimit = parseInt(req.query.limit, 10);
+  // Set default post limit
   postLimit = !isNaN(postLimit) ? postLimit : 100;
 
   Post.find().sort('-pub_date').limit(postLimit)
