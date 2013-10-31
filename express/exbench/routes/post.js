@@ -13,8 +13,8 @@ exports.getJSON = function(req, res) {
         pub_date: post.pub_date.toString(),
         comments: post.comments.map(function(comment) {
           return {
-          author: comment.author,
-          body: comment.body
+            author: comment.author,
+            body: comment.body
           }
         })
       };
