@@ -26,7 +26,7 @@ each one has 10 comments.
 
 Apache Bench
 
-    ab -n 10 -c 5 http://host:port/api/posts/?limit=10
+    ab -n 1000 -c 20 http://host:port/api/posts/?limit=10
 
 Test results can be found inside `results/` folder.
 
