@@ -27,7 +27,7 @@ each one has 10 comments.
 
 ### Benchmarking tool:
 
-Apache Bench
+Apache Bench using 1000 requests with 20 concurrent connections.
 
     ab -n 1000 -c 20 http://host:port/api/posts/?limit=10
 
