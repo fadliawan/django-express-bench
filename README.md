@@ -1,5 +1,8 @@
 ## Django vs Express Quick Benchmark
 
+This speedtest involves common stack of Python + Django + SQL versus Node.js + Express + NoSQL for
+web applications.
+
 Django setup:
 
 1. Django
