@@ -11,7 +11,7 @@ def json_post(request):
     except ValueError:
         post_limit = 100
     
-    latest_posts = Post.objects.all().order_by('-pub_date')[:post_limit]
+    latest_posts = Post.objects.prefetch_related('comment_set').order_by('-pub_date')[:post_limit]
 	
     posts = [{
         'content': p.content,
