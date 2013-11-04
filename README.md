@@ -1,6 +1,6 @@
-## Django vs Express Quick Benchmark
+## Django vs Express Stack Quick Benchmark
 
-This speedtest involves common stack of Python + Django + SQL versus Node.js + Express + NoSQL for
+The speedtests involve common stack of Python + Django + SQL versus Node.js + Express + NoSQL for
 web applications.
 
 Django setup:
@@ -27,7 +27,7 @@ each one has 10 comments.
 
 ### Benchmarking tool:
 
-Apache Bench using 1000 requests with 20 concurrent connections.
+Apache Bench making 1000 requests with 20 concurrent connections.
 
     ab -n 1000 -c 20 http://host:port/api/posts/?limit=10
 
