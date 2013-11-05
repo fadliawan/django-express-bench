@@ -8,34 +8,24 @@ exports.getJSON = function(req, res) {
   postLimit = !isNaN(postLimit) ? postLimit : 100;
 
   Post
-  .findAll({ limit: postLimit, order: 'pub_date DESC' })
+  .findAll({ limit: postLimit, order: 'pub_date DESC', include: [Comment] })
   .success(function(posts) {
 
-    var postsJSON = [];
-
-    posts.forEach(function(post) {
-      post
-      .getComments()
-      .success(function(comments) {
-        var postData = {
-          content: post.content,
-          pub_date: post.pub_date,
-          comments: comments.map(function(comment) {
-            return {
-              author: comment.author,
-              body: comment.body
-            };
-          })
-        };
-
-        // construct JSON here
-        postsJSON.push(postData);
-
-        if (postsJSON.length === postLimit) {
-          res.json(postsJSON);
-        }
-      });
+    var postsJSON = posts.map(function(p) {
+      return {
+        content: p.content,
+        pub_date: p.pub_date.toString(),
+        comments: p.comments.map(function(c) {
+          return {
+            author: c.author,
+            body: c.body
+          };
+        })
+      };
     });
+
+    // Send the data
+    res.json(postsJSON);
 
   });
 };
