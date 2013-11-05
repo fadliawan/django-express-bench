@@ -1,11 +1,16 @@
 # virtualenv
 django/djangobench/*
+
+# djench settings
 django/djench/djench/settings.py
 *.pyc
 
 # npm packages
 express/exbench/node_modules/*
 express/exbench-mysql/node_modules/*
+
+# exbench-mysql setting
+express/exbench-mysql/config/config.json
 
 # something
 output_format.json
