@@ -18,3 +18,6 @@ Post.hasMany(Comment);
 
 exports.Post = Post;
 exports.Comment = Comment;
+
+// Sync tables (uncomment please)
+// sequelize.sync({ force: true });

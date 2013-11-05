@@ -1,12 +1,6 @@
-var Sequelize = require('sequelize');
-// connect to MySQL db
-var sequelize = new Sequelize('exbench-mysql', 'root', '4444');
 var models = require('../models/models');
 var Post = models.Post;
 var Comment = models.Comment;
-
-// Sync tables
-sequelize.sync({ force: true });
 
 function populatePostAndComment() {
   var i = 1000;
@@ -25,19 +19,20 @@ function populatePostAndComment() {
       console.log("Now generating comments...");
 
       var j = 10;
-      var comments = [];
+      // var comments = [];
 
       while (j--) {
         var comment = Comment.create({
           author: "Author Name",
-          body: ipsum
+          body: ipsum,
+          PostId: post.id
         });
-        comments.push(comment);
+        // comments.push(comment);
       }
 
-      post.setComments(comments).success(function() {
-        console.log("Comments are successfully generated!")
-      });
+      // post.setComments(comments).success(function() {
+      //   console.log("Comments are successfully generated!")
+      // });
     });
 
   }

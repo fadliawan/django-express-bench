@@ -16,7 +16,7 @@ exports.getJSON = function(req, res) {
           return {
             author: comment.author,
             body: comment.body
-          }
+          };
         })
       };
     });
