@@ -80,3 +80,46 @@ Percentage of the requests served within a certain time (ms)
   98%    252
   99%    265
  100%    284 (longest request)
+
+
+
+
+ Express (MySQL)
+ ---------------
+
+ Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            8002
+
+Document Path:          /api/posts/?limit=10
+Document Length:        5806 bytes
+
+Concurrency Level:      20
+Time taken for tests:   68.965 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Total transferred:      611166 bytes
+HTML transferred:       580600 bytes
+Requests per second:    1.45 [#/sec] (mean)
+Time per request:       13792.963 [ms] (mean)
+Time per request:       689.648 [ms] (mean, across all concurrent requests)
+Transfer rate:          8.65 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   1.0      0       7
+Processing:  7004 13071 2007.0  13699   14237
+Waiting:     7004 13071 2007.0  13699   14237
+Total:       7005 13071 2007.0  13699   14238
+
+Percentage of the requests served within a certain time (ms)
+  50%  13699
+  66%  13769
+  75%  13812
+  80%  13859
+  90%  13979
+  95%  14105
+  98%  14198
+  99%  14238
+ 100%  14238 (longest request)

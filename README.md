@@ -1,7 +1,8 @@
 ## Django vs Express Stack Quick Benchmark
 
 The speedtests involve common stack of Python + Django + SQL versus Node.js + Express + NoSQL for
-web applications.
+web applications. There's also Express + MySQL stack included inside `express` folder but the 
+Sequelize.js ORM query isn't optimized (?) resulting in very slow performance.
 
 Django setup:
 
@@ -30,6 +31,9 @@ each one has 10 comments.
 Apache Bench making 1000 requests with 20 concurrent connections.
 
     ab -n 1000 -c 20 http://host:port/api/posts/?limit=10
+
+As for Express-MySQL it's soo underperforming so for the moment I ran it against only 100
+requests to prevent it boiling my CPU :(
 
 Test results can be found inside `results/` folder.
 
