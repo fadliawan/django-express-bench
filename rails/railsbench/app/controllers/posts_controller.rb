@@ -2,7 +2,10 @@ class PostsController < ApplicationController
   respond_to :json
 
   def get_latest
-    @posts = Post.includes(:comments).last(10)
+    limit = params[:limit].to_i
+    limit = limit != 0 ? limit : 100
+
+    @posts = Post.includes(:comments).last(limit)
     @posts_json = []
 
     @posts.each do |p|

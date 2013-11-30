@@ -123,3 +123,46 @@ Percentage of the requests served within a certain time (ms)
   98%  14198
   99%  14238
  100%  14238 (longest request)
+
+
+
+
+Rails
+-----
+
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            8080
+
+Document Path:          /api/posts/?limit=10
+Document Length:        54201 bytes
+
+Concurrency Level:      20
+Time taken for tests:   10.768 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      54668000 bytes
+HTML transferred:       54201000 bytes
+Requests per second:    92.87 [#/sec] (mean)
+Time per request:       215.365 [ms] (mean)
+Time per request:       10.768 [ms] (mean, across all concurrent requests)
+Transfer rate:          4957.78 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.3      0       4
+Processing:    37  213  22.3    210     269
+Waiting:       36  213  22.3    210     269
+Total:         37  213  22.2    211     269
+
+Percentage of the requests served within a certain time (ms)
+  50%    211
+  66%    221
+  75%    228
+  80%    231
+  90%    240
+  95%    246
+  98%    253
+  99%    257
+ 100%    269 (longest request)
